@@ -2,6 +2,8 @@
 # you cannot run it directly
 
 deactivate () {
+	
+    unset DJANGO_SETTINGS_MODULE
     unset -f pydoc >/dev/null 2>&1
 
     # reset old environment variables
@@ -39,6 +41,8 @@ deactivate () {
 
 # unset irrelevant variables
 deactivate nondestructive
+
+export DJANGO_SETTINGS_MODULE="agile.settings.development"
 
 VIRTUAL_ENV="/home/dany/agile/agileEnv"
 export VIRTUAL_ENV
